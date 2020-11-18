@@ -22,7 +22,7 @@ path = os.path.dirname(os.path.abspath("app.py"))
 
 model = VQA_baseline()
 print(os.listdir())
-model.load_state_dict(torch.load("model_dict.pth", map_location=torch.device('cpu')))
+##model.load_state_dict(torch.load("model_dict.pth", map_location=torch.device('cpu')))
 
 db = redis.StrictRedis(host="redis")
 
