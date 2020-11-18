@@ -5,6 +5,7 @@
 
 # Запуск
 `docker-compose up`
+
 open "localhost:5000" in browser
 
 
