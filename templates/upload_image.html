@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+
+{% block title %}
+Upload
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an image and ask a question. Machine will answer it.</h1>
+      you are also able to answer your question to extend train data of our model
+      <hr>
+      <form action="/" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image"></label>
+          </div>
+        </div>
+
+
+
+        {{ wtf.quick_form(form) }}
+        <p class="space-above"><strong>Predicted answer:{{ message }}</strong></p>
+        <img src="{{ url_for('static', filename=filename) }}" alt="Photo: {{ name }}" class="space-above blocker">
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
